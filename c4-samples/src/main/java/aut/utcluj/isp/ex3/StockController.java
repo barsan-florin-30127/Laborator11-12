@@ -1,5 +1,6 @@
 package aut.utcluj.isp.ex3;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +8,8 @@ import java.util.Map;
  * @author stefan
  */
 public class StockController {
+    private Map<String, List<Product>> catalogue = new HashMap<>();
+
     /**
      * Add product to catalogue
      *
@@ -15,7 +18,18 @@ public class StockController {
      * @apiNote: if products with the same products id already exists, assume that @param product has the same data
      */
     public void addProductToCatalogue(final Product product, final int quantity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for (Map.Entry<String, List<Product>> entry : catalogue.entrySet()) {
+
+            if (entry.getKey().equals(product.getId())) {
+                for (int i = 0; i < quantity; i++) {
+                    catalogue.put(product.getId(), entry.getValue());
+                }
+
+
+            }
+
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
     }
 
     /**
@@ -24,7 +38,9 @@ public class StockController {
      * @return dictionary where the key is the product id and the value is an array of products with the same id
      */
     public Map<String, List<Product>> getCatalogue() {
+
         throw new UnsupportedOperationException("Not supported yet.");
+
     }
 
     /**
@@ -67,3 +83,4 @@ public class StockController {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
+
