@@ -3,19 +3,15 @@ package aut.utcluj.isp.ex2;
 /**
  * @author stefan
  */
-public class Shop extends OnlineShop {
+public class Shop {
     public String name;
     public String city;
-
     public Shop(String name, String city) {
-        super.getWebAddress();
         this.city=city;
         this.name=name;
         //throw new UnsupportedOperationException("Not supported yet.");
     }
-
     public Shop(){}
-
     @Override
     public String toString() {
         return "Shop: " + name  +
