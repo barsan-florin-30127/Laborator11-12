@@ -4,23 +4,42 @@ package aut.utcluj.isp.ex2;
  * @author stefan
  */
 public class Shop {
-    private String name;
-    private String city;
-
+    public String name;
+    public String city;
     public Shop(String name, String city) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.city=city;
+        this.name=name;
+        //throw new UnsupportedOperationException("Not supported yet.");
+    }
+    public Shop(){}
+    @Override
+    public String toString() {
+        return "Shop: " + name  +
+                " City: " + city  ;
     }
 
-    public Shop(String name) {
-        this.city = "";
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getCity() {
-        return city;
+        return this.city;
+    }
+
+}
+
+class ex2 {
+    public static void main(String[] args) {
+
+        Shop shop= new Shop("eMag","Cluj");
+        OnlineShop onlineShop=new OnlineShop(shop.getName(),shop.getCity(),"https://www.emag.ro");
+
+        System.out.println(onlineShop.toString());
+        System.out.println( onlineShop.getWebAddress());
+        System.out.println(shop.toString());
+
+
+
     }
 }
