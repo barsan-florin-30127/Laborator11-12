@@ -1,7 +1,6 @@
 package aut.utcluj.isp.ex3;
 
 import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
 

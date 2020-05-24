@@ -56,6 +56,7 @@ public class UserCart implements ICartDetails {
                 this.totalPrice -= this.cardProducts.get(i).getPrice();
                 this.cardProducts.remove(i);
                 found = true;
+                break;
             }
         }
         if (!found) {

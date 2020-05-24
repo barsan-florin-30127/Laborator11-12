@@ -21,6 +21,10 @@ public class User {
         return userMoney;
     }
 
+    public void addUserMoney(double value) {
+        this.userMoney += value;
+    }
+
     /**
      * Add product to the cart
      *
